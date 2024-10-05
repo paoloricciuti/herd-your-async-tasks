@@ -2,12 +2,30 @@
 	import { enhance } from '$app/forms';
 
 	let { data, form } = $props();
+
+	let active = $state(false);
 </script>
 
 <main class="grid h-screen place-content-center">
 	{#if data.username}
 		<form method="post" action="?/send" class="grid place-items-center gap-5" use:enhance>
-			<button class="pushable">
+			<small
+				class="mb-10 max-w-[80%] rounded-lg bg-orange-800 p-2 text-center text-xs opacity-75 hover:opacity-100"
+				>Huge thanks to Josh Comeau for <a
+					class="text-orange-100"
+					href="https://www.joshwcomeau.com/animation/3d-button/">this wonderful blog post</a
+				> with the code of this button!</small
+			>
+			<button
+				class:active
+				onkeydown={() => {
+					active = true;
+				}}
+				onkeyup={() => {
+					active = false;
+				}}
+				class="pushable"
+			>
 				<span class="shadow"></span>
 				<span class="edge"></span>
 				<span class="front"></span>
@@ -38,6 +56,10 @@
 		font-family: var(--r-main-font);
 		font-size: var(--r-main-font-size);
 		font-weight: normal;
+	}
+	button {
+		-webkit-tap-highlight-color: transparent;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	}
 	.pushable {
 		position: relative;
@@ -100,7 +122,7 @@
 		transform: translateY(-12px);
 		transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 	}
-	.pushable:active .front {
+	:is(.pushable:active, .active) .front {
 		transform: translateY(-2px);
 		transition: transform 34ms;
 	}
@@ -108,7 +130,7 @@
 		transform: translateY(4px);
 		transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 	}
-	.pushable:active .shadow {
+	:is(.pushable:active, .active) .shadow {
 		transform: translateY(1px);
 		transition: transform 34ms;
 	}
