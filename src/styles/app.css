@@ -25,7 +25,7 @@
 
 /* defaults */
 :root {
-	--r-background-color: var(--color-stone-900);
+	--r-background-color: var(--color-zinc-950);
 	--r-main-font: 'Manrope Variable';
 	--r-main-font-size: 42px;
 	--r-main-color: var(--color-orange-200);
@@ -53,14 +53,6 @@
 		0.9949 89.15%,
 		1 100%
 	);
-}
-
-/* code block */
-div:has(> pre) {
-	padding: var(--spacing-4) var(--spacing-8);
-	background-color: oklch(24% 0.02 272);
-	border-top: 1px solid oklch(34% 0.02 272);
-	border-radius: var(--radius-lg);
 }
 
 /* view transitions */

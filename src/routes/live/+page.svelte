@@ -10,7 +10,7 @@
 	{#if data.username}
 		<form method="post" action="?/send" class="grid place-items-center gap-5" use:enhance>
 			<small
-				class="mb-10 max-w-[80%] rounded-lg bg-orange-800 p-2 text-center text-xs opacity-75 hover:opacity-100"
+				class="mb-10 max-w-[80%] rounded-lg bg-zinc-800 p-2 text-center text-xs opacity-75 hover:opacity-100"
 				>Huge thanks to Josh Comeau for <a
 					class="text-orange-100"
 					href="https://www.joshwcomeau.com/animation/3d-button/">this wonderful blog post</a
