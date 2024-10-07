@@ -11,8 +11,8 @@
 
 <script lang="ts">
 	import InfoShower from '$lib/InfoShower.svelte';
-	import { Action } from '@animotion/core';
 	import me from './me.jpg';
+	import Action from '$lib/Action.svelte';
 
 	const infos = [
 		{
@@ -76,8 +76,11 @@
 
 {#each infos as _, i}
 	<Action
-		do={() => {
+		in={() => {
 			drawn = i + 1;
+		}}
+		out={() => {
+			drawn = i;
 		}}
 	/>
 {/each}
