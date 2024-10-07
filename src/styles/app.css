@@ -74,6 +74,10 @@ html {
 	animation: rotate 0.6s var(--ease);
 }
 
+.bigger-tabs {
+	tab-size: 3;
+}
+
 @keyframes enter {
 	from {
 		filter: blur(40px);

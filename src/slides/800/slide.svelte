@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Code } from '@animotion/core';
-	import Action from '$lib/Action.svelte';
+	import { Code, Action } from '@animotion/core';
 
 	let code: ReturnType<typeof Code>;
 </script>
@@ -22,7 +21,7 @@ console.log('got data');`}
 />
 
 <Action
-	in={() => {
+	do={() => {
 		code.update`import fs from 'node:fs';
 
 fs.readFile('my-file.txt', 'utf8', (err, data)=>{
@@ -34,7 +33,7 @@ fs.readFile('my-file.txt', 'utf8', (err, data)=>{
 });
 console.log('got data');`;
 	}}
-	out={() => {
+	undo={() => {
 		code.update`import fs from 'node:fs';
 
 try{

@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { defineProps } from '@animotion/core';
+	import { defineProps, Action } from '@animotion/core';
 	let drawn = $state(0);
 
 	export const props = defineProps({
@@ -12,7 +12,6 @@
 <script lang="ts">
 	import InfoShower from '$lib/InfoShower.svelte';
 	import me from './me.jpg';
-	import Action from '$lib/Action.svelte';
 
 	const infos = [
 		{
@@ -76,10 +75,10 @@
 
 {#each infos as _, i}
 	<Action
-		in={() => {
+		do={() => {
 			drawn = i + 1;
 		}}
-		out={() => {
+		undo={() => {
 			drawn = i;
 		}}
 	/>
