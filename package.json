@@ -30,6 +30,7 @@
 		"@fontsource-variable/jetbrains-mono": "^5.0.21",
 		"@fontsource-variable/manrope": "^5.0.20",
 		"@fontsource/calistoga": "^5.1.0",
+		"@neoconfetti/svelte": "^2.2.1",
 		"@tailwindcss/vite": "4.0.0-alpha.14",
 		"@xenova/transformers": "^2.17.2",
 		"reveal.js": "^5.1.0",

@@ -8,7 +8,7 @@
 	bind:this={code}
 	lang="js"
 	theme="github-dark"
-	class="p-10"
+	class="rounded-lg p-10"
 	code={`import fs from 'node:fs';
 
 try{

@@ -1,13 +1,12 @@
 <script lang="ts">
 	import ChainedCode from '$lib/ChainedCode.svelte';
-	import { Action, Code } from '@animotion/core';
-	let code: ReturnType<typeof Code>;
+	import { Code } from '@animotion/core';
 </script>
 
 <ChainedCode
 	lang="js"
 	theme="github-dark"
-	class="bigger-tabs p-10"
+	class="bigger-tabs rounded-lg p-10"
 	codes={[
 		`const promise = new Promise((resolve)=>{
 	return 21;

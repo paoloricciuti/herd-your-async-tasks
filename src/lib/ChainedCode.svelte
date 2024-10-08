@@ -14,7 +14,7 @@
 <Code bind:this={code} code={codes[0]} {...rest} />
 
 {#each codes as _, i}
-	{#if codes[i + i]}
+	{#if codes[i + 1]}
 		<Action
 			do={() => {
 				code.update`${codes[i + 1]}`;

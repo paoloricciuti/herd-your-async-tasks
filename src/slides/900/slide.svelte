@@ -17,7 +17,7 @@
 		bind:this={code}
 		lang="js"
 		theme="github-dark"
-		class="bigger-tabs p-10"
+		class="bigger-tabs rounded-lg p-10"
 		code={`import fs from 'node:fs';
 
 fs.readFile('name.txt', 'utf8', (err, name)=>{
