@@ -2,7 +2,7 @@
 	import Loading from '../Loading.svelte';
 	import type { Products } from '../products';
 
-	let products = $state<Products>({ products: [] });
+	let products = $state<Products>([]);
 
 	let loading = $state(false);
 	let canceled = false;
@@ -21,7 +21,7 @@
 
 	const fetch_products = debounce(async () => {
 		loading = true;
-		const res = await fetch('https://dummyjson.com/products');
+		const res = await fetch('/products');
 		if (canceled) {
 			canceled = false;
 			loading = false;
@@ -44,7 +44,7 @@
 >
 
 <ul>
-	{#each products.products as product}
+	{#each products as product}
 		<li>{product.title}</li>
 	{/each}
 </ul>

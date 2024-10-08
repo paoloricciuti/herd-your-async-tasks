@@ -1,3 +1,1 @@
-export type Products = {
-	products: Array<{ title: string }>;
-};
+export type Products = Array<{ title: string }>;

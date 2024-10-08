@@ -25,6 +25,7 @@
 
 /* defaults */
 :root {
+	color-scheme: dark;
 	--r-background-color: var(--color-zinc-950);
 	--r-main-font: 'Manrope Variable';
 	--r-main-font-size: 42px;

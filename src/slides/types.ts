@@ -1,4 +1,4 @@
-import { Slide } from '@animotion/core';
-import type { ComponentProps, SvelteComponent } from 'svelte';
+import type { Component } from 'svelte';
 
-export type Props<T extends SvelteComponent = Slide> = ComponentProps<T>;
+export type ComponentExports<TComponent extends Component<any, any>> =
+	TComponent extends Component<any, infer TExports> ? TExports : never;
