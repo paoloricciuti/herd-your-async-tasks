@@ -1,7 +1,7 @@
 export const controllers = new Set<ReadableStreamDefaultController>();
 
-export function send_event(username: string) {
+export function send_event(event: string, username: string) {
 	for (let controller of controllers) {
-		controller.enqueue(`data: ${username}\n\n`);
+		controller.enqueue(`event: ${event}\ndata: ${username}\n\n`);
 	}
 }

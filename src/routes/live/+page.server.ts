@@ -24,15 +24,17 @@ export const actions = {
 				message: 'No toxic usernames please',
 			});
 		}
+		send_event('login', '');
 		cookies.set(USERNAME_COOKIE, username.toString(), { path: '/', httpOnly: true });
 	},
 	async send({ cookies }) {
 		const username = cookies.get(USERNAME_COOKIE);
 		if (username) {
-			send_event(username);
+			send_event('ping', username);
 		}
 	},
 	async logout({ cookies }) {
-		const username = cookies.delete(USERNAME_COOKIE, { path: '/' });
+		cookies.delete(USERNAME_COOKIE, { path: '/' });
+		send_event('logout', '');
 	},
 };

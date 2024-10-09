@@ -9,6 +9,10 @@
 	const { codes, ...rest }: ChainedCodeProps = $props();
 
 	let code: ReturnType<typeof Code>;
+
+	export function get_code() {
+		return code;
+	}
 </script>
 
 <Code bind:this={code} code={codes[0]} {...rest} />

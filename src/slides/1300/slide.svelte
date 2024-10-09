@@ -31,25 +31,25 @@
 	class="bigger-tabs rounded-lg p-10"
 	codes={[
 		`const promise = new Promise((resolve)=>{
-	return 21;
+	resolve(21);
 });
 
 promise.then((value)=>{
 	return value * 2;
 })`,
 		`const promise = new Promise((resolve)=>{
-	return 21;
+	resolve(21);
 });
 
 const value = await promise;`,
 		`const promise = new Promise((resolve)=>{
-	return 21;
+	resolve(21);
 });
 
 const value = await promise;
 const double = value * 2;`,
 		`const promise = new Promise((resolve)=>{
-	return 21;
+	resolve(21);
 });
 
 try{
