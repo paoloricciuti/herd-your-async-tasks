@@ -69,21 +69,18 @@
 				event.current = Date.now();
 			});
 			events.add(event);
-			let timeout_id = setTimeout(() => {
-				events.delete(event);
-				clearInterval(interval);
-			}, time);
 			controller?.signal.addEventListener('abort', () => {
 				events.delete(event);
-				clearTimeout(timeout_id);
 				clearInterval(interval);
 			});
 			signal.addEventListener('abort', () => {
 				events.delete(event);
-				clearTimeout(timeout_id);
 				clearInterval(interval);
 			});
-			await timeout(time);
+			await timeout(time).then(() => {
+				events.delete(event);
+				clearInterval(interval);
+			});
 		},
 		{ kind },
 	);
@@ -105,7 +102,10 @@
 		theme="github-dark"
 		class="place-self-center rounded-lg p-10 text-2xl!"
 		code={`task${kind !== 'default' ? `.${kind}` : ''}(async (event: Event)=> { 
-	events.add(event)
+	events.add(event);
+	await timeout(time).then(()=>{
+		events.delete(event);
+	});
 })`}
 	/>
 	{#if active}
