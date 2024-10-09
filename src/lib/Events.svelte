@@ -12,6 +12,7 @@
 			x: number;
 			y: number;
 		};
+		color: string;
 		size: number;
 		started: number;
 		current: number;
@@ -25,6 +26,16 @@
 	}: { active: boolean; kind?: HandlerType; time?: number } = $props();
 
 	let events = $state<SvelteSet<Event>>(new SvelteSet());
+
+	const colors = ['#ef4444', '#84cc16', '#0ea5e9', '#ec4899', '#ff3e00', '#facc15'];
+
+	function get_color(name: string) {
+		let color_idx = 0;
+		for (let char of [...name]) {
+			color_idx += char.charCodeAt(0);
+		}
+		return colors[color_idx % colors.length];
+	}
 
 	const formatter = new Intl.RelativeTimeFormat('en', { style: 'short' });
 
@@ -48,6 +59,7 @@
 					x: Math.random() * (100 - size),
 					y: Math.random() * (100 - size),
 				},
+				color: get_color(name),
 				size,
 				started: Date.now(),
 				current: Date.now(),
@@ -111,7 +123,8 @@
 		style:--y="{event.position.y}%"
 		style:--size="{event.size}%"
 		style:--percent={(event.current - event.started) / time}
-		class="pointer-events-none fixed top-[--y] left-[--x] z-50 grid aspect-square w-[--size] place-content-center place-items-center gap-5 overflow-hidden rounded-full bg-orange-200/75 text-orange-950 drop-shadow-2xl"
+		style:--bg={event.color}
+		class="pointer-events-none fixed top-[--y] left-[--x] z-50 grid aspect-square w-[--size] place-content-center place-items-center gap-5 overflow-hidden rounded-full bg-[--bg]/75 text-orange-950 drop-shadow-2xl"
 	>
 		{event.name}
 		<small class="text-xs!"
