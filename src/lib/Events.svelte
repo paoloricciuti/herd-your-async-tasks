@@ -87,14 +87,23 @@
 	);
 </script>
 
-<Code
-	lang="ts"
-	theme="github-dark"
-	class="rounded-lg p-10 text-3xl!"
-	code={`task${kind !== 'default' ? `.${kind}` : ''}(async (event: Event)=> { 
+<div class="flex gap-10">
+	<Code
+		lang="ts"
+		theme="github-dark"
+		class="place-self-center rounded-lg p-10 text-2xl!"
+		code={`task${kind !== 'default' ? `.${kind}` : ''}(async (event: Event)=> { 
 	events.add(event)
 })`}
-/>
+	/>
+	{#if active}
+		<iframe
+			class="fixed top-1/2 left-full aspect-[9/16] min-w-[400px] -translate-x-[30%] -translate-y-1/2 rounded-2xl border-2 border-stone-500 shadow-orange-100"
+			src="/live"
+			title="voting"
+		></iframe>
+	{/if}
+</div>
 
 {#each events as event}
 	<div
@@ -102,7 +111,7 @@
 		style:--y="{event.position.y}%"
 		style:--size="{event.size}%"
 		style:--percent={(event.current - event.started) / time}
-		class="fixed top-[--y] left-[--x] grid aspect-square w-[--size] place-content-center place-items-center gap-5 overflow-hidden rounded-full bg-orange-200/75 text-orange-950 drop-shadow-2xl"
+		class="pointer-events-none fixed top-[--y] left-[--x] z-50 grid aspect-square w-[--size] place-content-center place-items-center gap-5 overflow-hidden rounded-full bg-orange-200/75 text-orange-950 drop-shadow-2xl"
 	>
 		{event.name}
 		<small class="text-xs!"
