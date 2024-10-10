@@ -1,6 +1,6 @@
 import { controllers } from '../hub';
 
-export function GET({ cookies }) {
+export function GET() {
 	let controller: ReadableStreamDefaultController;
 	return new Response(
 		new ReadableStream({

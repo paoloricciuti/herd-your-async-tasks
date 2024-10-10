@@ -57,11 +57,11 @@
 }
 
 :root:not([data-theme]) {
-	--pico-primary: var(--r-link-color);
-	--pico-primary-background: var(--r-link-color);
-	--pico-primary-hover: #ff4000;
-	--pico-primary-hover-background: #ff4000;
-	--pico-background-color: var(--r-background-color);
+	--pico-primary: var(--r-link-color) !important;
+	--pico-primary-background: var(--r-link-color) !important;
+	--pico-primary-hover: #ff4000 !important;
+	--pico-primary-hover-background: #ff4000 !important;
+	--pico-background-color: var(--r-background-color) !important;
 }
 
 /* view transitions */

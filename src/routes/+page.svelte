@@ -1,16 +1,16 @@
 <svelte:options runes />
 
 <script lang="ts">
-	import { Presentation, Slide as OgSlide } from '@animotion/core';
-	import type { Component } from 'svelte';
-	import type { Props } from '../slides/types';
 	import { browser } from '$app/environment';
+	import Presenter from '$lib/Presenter.svelte';
+	import { Slide as OgSlide, Presentation } from '@animotion/core';
+	import type { Component, ComponentProps } from 'svelte';
 
 	const slides = Object.entries(
 		import.meta.glob<{
 			default: Component;
 			component?: Component;
-			props?: Props;
+			props?: ComponentProps<typeof OgSlide>;
 		}>('../slides/**/slide.svelte', {
 			eager: true,
 		}),
@@ -39,6 +39,8 @@
 </script>
 
 <div style:--size={size} style:--x="{x}px" style:--y="{y}px" class="orb"></div>
+
+<Presenter />
 
 <Presentation
 	options={{

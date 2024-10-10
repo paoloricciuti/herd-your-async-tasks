@@ -25,7 +25,10 @@ export const actions = {
 			});
 		}
 		send_event('login', '');
-		cookies.set(USERNAME_COOKIE, username.toString(), { path: '/', httpOnly: true });
+		cookies.set(USERNAME_COOKIE, username.toString().substring(0, 10), {
+			path: '/',
+			httpOnly: true,
+		});
 	},
 	async send({ cookies }) {
 		const username = cookies.get(USERNAME_COOKIE);

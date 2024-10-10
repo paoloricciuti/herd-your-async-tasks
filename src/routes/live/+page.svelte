@@ -37,7 +37,11 @@
 		</form>
 	{:else}
 		<form method="post" action="?/login" class="grid place-items-center gap-5 p-4" use:enhance>
-			<input name="username" class="rounded-xl bg-orange-100 p-2 text-xl text-stone-950" />
+			<input
+				maxlength="10"
+				name="username"
+				class="rounded-xl bg-orange-100 p-2 text-xl text-stone-950"
+			/>
 			<button
 				class="rounded-xl border-0 bg-gradient-to-b from-orange-500 to-orange-600 py-2 px-4 text-lg"
 				>log in</button
