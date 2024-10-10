@@ -39,6 +39,8 @@
 
 	const formatter = new Intl.RelativeTimeFormat('en', { style: 'short' });
 
+	const max = 3;
+
 	const push_task = task(
 		async (
 			{
@@ -82,7 +84,7 @@
 				clearInterval(interval);
 			});
 		},
-		{ kind },
+		{ kind, max },
 	);
 
 	subscribe_events(
@@ -106,7 +108,7 @@
 	await timeout(time).then(()=>{
 		events.delete(event);
 	});
-})`}
+}${kind !== 'default' ? `, { max: ${max} }` : ''})`}
 	/>
 	{#if active}
 		<iframe
