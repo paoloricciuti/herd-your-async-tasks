@@ -1,4 +1,8 @@
-import { pipeline, type TextClassificationSingle } from '@xenova/transformers';
+import { pipeline, type TextClassificationSingle, env } from '@xenova/transformers';
+
+env.localModelPath = './ai-model/';
+env.allowRemoteModels = false;
+env.backends.onnx.wasm.wasmPaths = './ai-model/';
 
 class PipelineSingleton {
 	static task = 'text-classification' as const;
