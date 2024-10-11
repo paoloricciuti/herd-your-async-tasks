@@ -27,8 +27,8 @@ importers:
         specifier: ^2.2.1
         version: 2.2.1
       '@sheepdog/svelte':
-        specifier: ^0.9.0
-        version: 0.9.0(svelte@5.0.0-next.245)
+        specifier: ^0.10.0
+        version: 0.10.0(svelte@5.0.0-next.245)
       '@tailwindcss/vite':
         specifier: 4.0.0-alpha.14
         version: 4.0.0-alpha.14(vite@5.4.5(@types/node@22.7.4)(lightningcss@1.27.0))
@@ -427,10 +427,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sheepdog/svelte@0.9.0':
-    resolution: {integrity: sha512-huAXqWi9Ib096wnykCXfDatNhS3McdAAuShfQxhUwuBEjpduLeZTg9MWv5UVh6Kyhj76v7N0ma4eI8RtXJQ1xA==}
+  '@sheepdog/svelte@0.10.0':
+    resolution: {integrity: sha512-22Zal88Ka3EbJTXqSKwEZAr8OkvmtAXO8nQzUywLe92+hy0XPjEaGoIJ5rgRCFRrzIlcEonaeOJo7xEF/Dm0TQ==}
     peerDependencies:
-      svelte: ^4.0.0
+      svelte: ^4.0.0 || ^5.0.0 || ^5.0.0-next.1
 
   '@shikijs/core@1.17.5':
     resolution: {integrity: sha512-JDgFZbJvfZ1g0lRVHtPTv6n2MwWnbTSGwncL/Qmlg7BZBzHCcDY2CxYGkNUm7k+lljOrFzXFGh38s8CRRZH+TQ==}
@@ -1626,7 +1626,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.3':
     optional: true
 
-  '@sheepdog/svelte@0.9.0(svelte@5.0.0-next.245)':
+  '@sheepdog/svelte@0.10.0(svelte@5.0.0-next.245)':
     dependencies:
       acorn: 8.12.1
       esrap: 1.2.2
