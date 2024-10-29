@@ -5,7 +5,7 @@
 
 <div class="flex gap-10">
 	<ul class="-ml-20 grid list-none place-content-center gap-4 text-left">
-		<li><a class="text-orange-200" href="https://sheepdogjs.com">https://sheepdogjs.com</a></li>
+		<li><a class="text-orange-200" href="https://sheepdog.run">https://sheepdog.run</a></li>
 		<li>
 			<a class="text-orange-200" href="https://github.com/mainmatter/sheepdog"
 				>https://github.com/mainmatter/sheepdog</a
