@@ -108,7 +108,7 @@
 	await timeout(time).then(()=>{
 		events.delete(event);
 	});
-}${kind !== 'default' ? `, { max: ${max} }` : ''})`}
+}${kind !== 'default' ? `, { max: ${max} }` : ''});`}
 	/>
 	{#if active}
 		<iframe

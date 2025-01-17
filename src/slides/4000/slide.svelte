@@ -34,11 +34,11 @@ export default defineConfig({
 	const res = await fetch('/products');
 	const products = await res;
 	return products;
-})`,
+});`,
 		`const my_task = task(async function*(){
 	const res = yield fetch('/products');
 	const products = yield res;
 	return products;
-})`,
+});`,
 	]}
 />
