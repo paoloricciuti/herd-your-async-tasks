@@ -33,7 +33,7 @@
 			y: 80,
 			angle: -30,
 			length: 42,
-			info: '🐦 @PaoloRicciuti 🐙',
+			info: '🐙 @PaoloRicciuti',
 		},
 		{
 			x: 75,
